@@ -1,0 +1,19 @@
+# Archivos de entorno y credenciales
+.env
+*.env
+
+# Cache de Python y entornos virtuales
+__pycache__/
+*.pyc
+venv/
+env/
+
+# Archivos pesados o temporales de SQL / backups
+*.bak
+*.bacpac
+*.tmp
+*.log
+
+# Configuraciones de VS Code / IDEs
+.vscode/
+.idea/
