@@ -1,44 +1,101 @@
-# TurismoPeru_Seguridad_VásquezQuiroz
+# Examen Práctico: Seguridad y Administración en SQL Server - TurismoPerú
 
-**Estudiante:** Vásquez Quiroz  
-**Curso:** Base de Datos II - Grupo B  
-**Institución:** Universidad Nacional de Cajamarca  
-
----
-
-## 📌 Descripción del Proyecto
-Implementación del mecanismo básico de administración, seguridad, importación de datos y análisis para el sistema de información de la empresa **TurismoPeru_JDVQ**.
+**Universidad Nacional de Cajamarca**  
+**Facultad de Ingeniería**  
+**Escuela Académico Profesional de Ingeniería de Sistemas**  
 
 ---
 
-## 🔐 Principio de Mínimo Privilegio (Justificación)
-**¿Por qué no es adecuado asignar `db_owner` al vendedor o al analista?**
-Asignar el rol `db_owner` otorga control total sobre el esquema y los datos de la base de datos (incluyendo eliminación de tablas, modificación de permisos, truncado de registros y gestión de backups). 
-* **Vendedor:** Únicamente requiere permisos operativos de consulta e inserción de clientes y reservas. Otorgarle `db_owner` le permitiría eliminar información crítica o modificar la estructura del sistema.
-* **Analista:** Solo requiere permisos de lectura (`SELECT`) para la generación de reportes. Asignarle un rol con privilegios elevados rompería el principio de mínimo privilegio y expondría la integridad de la base de datos a modificaciones no autorizadas.
+## 📌 Datos de la Evaluación
+* **Proyecto:** `TurismoPeru_Seguridad_VásquezQuiroz`
+* **Base de Datos:** `TURISMOPERU_JDVQ`
+* **Autor:** Vásquez Quiroz, J. D.
+* **Repositorio GitHub:** [https://github.com/jvasquezq242-hash/TurismoPeru_Seguridad_V-squezQuiroz](https://github.com/jvasquezq242-hash/TurismoPeru_Seguridad_V-squezQuiroz)
 
 ---
 
-## 📁 Estructura del Repositorio
+## 📂 Estructura del Repositorio
+
 ```text
 TurismoPeru_Seguridad_VásquezQuiroz/
-├── README.md
-├── .gitignore
+│
 ├── 01_usuarios_roles/
-│   ├── 01_logins.sql
-│   ├── 02_users.sql
-│   ├── 03_roles.sql
-│   └── 04_permisos.sql
+│   ├── 01_logins.sql           # Creación de Inicios de Sesión (Logins) a nivel de servidor
+│   ├── 02_users.sql            # Mapeo de Usuarios en la BD TURISMOPERU_JDVQ
+│   ├── 03_roles.sql            # Definición de Roles personalizados de base de datos
+│   └── 04_permisos.sql         # Asignación de permisos GRANT / DENY / REVOKE
+│
 ├── 02_importacion_exportacion/
-│   └── importacion.sql
+│   └── importacion.sql         # Carga masiva e importación de datos iniciales
+│
 ├── 03_backups/
-│   └── backup_full.sql
+│   └── backup_full.sql         # Script para la generación de respaldos completos (.bak / .bacpac)
+│
 ├── 04_seguridad/
-│   └── pruebas_permisos.sql
+│   └── pruebas_permisos.sql    # Pruebas y validaciones del Principio de Mínimo Privilegio
+│
 ├── 05_reportes/
-│   └── consultas_reportes.sql
-└── evidencias/
-    ├── login.png
-    ├── permisos.png
-    ├── backup.png
-    └── reporte.png
+│   └── consultas_reportes.sql # Consultas T-SQL analíticas (KPIs y agregaciones)
+│
+├── 06_powerbi/
+│   └── dashboard.pbix          # Informe y Dashboard interactivo en Power BI Desktop
+│
+├── evidencias/
+│   ├── backup.png              # Captura de respaldo exitoso
+│   ├── github.png              # Captura del repositorio sincronizado
+│   ├── login.png               # Captura de autenticación exitosa en SQL Server
+│   ├── permisos.png            # Captura de denegación de permisos (INSERT denegado)
+│   └── reporte.png             # Captura de resultados de las consultas de reporte
+│
+├── .gitignore                  # Exclusión de archivos temporales
+└── README.md                   # Documentación general del proyecto# Examen Práctico: Seguridad y Administración en SQL Server - TurismoPerú
+
+**Universidad Nacional de Cajamarca**  
+**Facultad de Ingeniería**  
+**Escuela Académico Profesional de Ingeniería de Sistemas**  
+
+---
+
+## 📌 Datos de la Evaluación
+* **Proyecto:** `TurismoPeru_Seguridad_VásquezQuiroz`
+* **Base de Datos:** `TURISMOPERU_JDVQ`
+* **Autor:** Vásquez Quiroz, J. D.
+* **Repositorio GitHub:** [https://github.com/jvasquezq242-hash/TurismoPeru_Seguridad_V-squezQuiroz](https://github.com/jvasquezq242-hash/TurismoPeru_Seguridad_V-squezQuiroz)
+
+---
+
+## 📂 Estructura del Repositorio
+
+```text
+TurismoPeru_Seguridad_VásquezQuiroz/
+│
+├── 01_usuarios_roles/
+│   ├── 01_logins.sql           # Creación de Inicios de Sesión (Logins) a nivel de servidor
+│   ├── 02_users.sql            # Mapeo de Usuarios en la BD TURISMOPERU_JDVQ
+│   ├── 03_roles.sql            # Definición de Roles personalizados de base de datos
+│   └── 04_permisos.sql         # Asignación de permisos GRANT / DENY / REVOKE
+│
+├── 02_importacion_exportacion/
+│   └── importacion.sql         # Carga masiva e importación de datos iniciales
+│
+├── 03_backups/
+│   └── backup_full.sql         # Script para la generación de respaldos completos (.bak / .bacpac)
+│
+├── 04_seguridad/
+│   └── pruebas_permisos.sql    # Pruebas y validaciones del Principio de Mínimo Privilegio
+│
+├── 05_reportes/
+│   └── consultas_reportes.sql # Consultas T-SQL analíticas (KPIs y agregaciones)
+│
+├── 06_powerbi/
+│   └── dashboard.pbix          # Informe y Dashboard interactivo en Power BI Desktop
+│
+├── evidencias/
+│   ├── backup.png              # Captura de respaldo exitoso
+│   ├── github.png              # Captura del repositorio sincronizado
+│   ├── login.png               # Captura de autenticación exitosa en SQL Server
+│   ├── permisos.png            # Captura de denegación de permisos (INSERT denegado)
+│   └── reporte.png             # Captura de resultados de las consultas de reporte
+│
+├── .gitignore                  # Exclusión de archivos temporales
+└── README.md                   # Documentación general del proyecto
